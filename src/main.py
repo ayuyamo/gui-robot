@@ -4,7 +4,7 @@ from mainwindow import MyWindow
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
-    qss = "styles/stylesheet.qss"
+    qss = "styles/indigo.qss"
     with open(qss, "r") as fh:
         app.setStyleSheet(fh.read())
     window = MyWindow()
