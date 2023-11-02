@@ -7,6 +7,7 @@ class ButtonActions(QObject):
 
     def connect_buttons(self):
         self.main.home.clicked.connect(lambda: self.main.stacked_widget.setCurrentIndex(0))
+        self.main.home_1.clicked.connect(lambda: self.main.stacked_widget.setCurrentIndex(0))
         self.main.home_2.clicked.connect(lambda: self.main.stacked_widget.setCurrentIndex(1))
         self.main.pid_control.clicked.connect(lambda: self.main.stacked_widget.setCurrentWidget(self.main.pid_page))
         self.main.vision.clicked.connect(lambda: self.main.stacked_widget.setCurrentWidget(self.main.vision_page))
