@@ -125,7 +125,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page">
        <layout class="QGridLayout" name="gridLayout_3">
@@ -142,7 +142,7 @@
              </font>
             </property>
             <property name="text">
-             <string>System Controls</string>
+             <string>SYSTEM CONTROLS</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -385,48 +385,17 @@
       </widget>
       <widget class="QWidget" name="page_2">
        <layout class="QGridLayout" name="gridLayout_4">
-        <item row="0" column="0" rowspan="2">
-         <widget class="QGroupBox" name="groupBox_3">
-          <property name="title">
-           <string>Nodes</string>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="font">
+           <font>
+            <family>Lato</family>
+            <pointsize>25</pointsize>
+           </font>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout">
-           <item>
-            <widget class="QCheckBox" name="main_node">
-             <property name="text">
-              <string>main</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="pid_node">
-             <property name="text">
-              <string>pid</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="desired_state_node">
-             <property name="text">
-              <string>desired_state</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="current_state_node">
-             <property name="text">
-              <string>current_state</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="absolute_state_node">
-             <property name="text">
-              <string>absolute_state</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <property name="text">
+           <string>LAUNCH PAGE</string>
+          </property>
          </widget>
         </item>
         <item row="0" column="1">
@@ -459,17 +428,65 @@
           </item>
          </layout>
         </item>
-        <item row="1" column="1">
-         <widget class="QGroupBox" name="groupBox_2">
-          <property name="title">
-           <string>Selected:</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_2">
-           <item row="0" column="0">
-            <widget class="QTextEdit" name="nodes_selected"/>
-           </item>
-          </layout>
-         </widget>
+        <item row="1" column="0" colspan="2">
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QGroupBox" name="groupBox_3">
+            <property name="title">
+             <string>Nodes</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <widget class="QCheckBox" name="main_node">
+               <property name="text">
+                <string>main</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="pid_node">
+               <property name="text">
+                <string>pid</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="desired_state_node">
+               <property name="text">
+                <string>desired_state</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="current_state_node">
+               <property name="text">
+                <string>current_state</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="absolute_state_node">
+               <property name="text">
+                <string>absolute_state</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="title">
+             <string>Selected:</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="0" column="0">
+              <widget class="QTextEdit" name="nodes_selected"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
