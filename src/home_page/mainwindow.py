@@ -19,7 +19,6 @@ class MyWindow(QtWidgets.QMainWindow):
         self.stacked_widget.setCurrentIndex(0)  # Set the initial page to index 0
         
         launch_page = Launch(self)
-        launch_page.second_page()
 
 
 
