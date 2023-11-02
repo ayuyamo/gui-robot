@@ -16,8 +16,10 @@ class MyWindow(QtWidgets.QMainWindow):
         button_handler = ButtonActions(self)
         button_handler.connect_buttons()
         
+        self.stacked_widget.setCurrentIndex(0)  # Set the initial page to index 0
+        
         launch_page = Launch(self)
-        launch_page.showDialog()
+        launch_page.second_page()
 
 
 
