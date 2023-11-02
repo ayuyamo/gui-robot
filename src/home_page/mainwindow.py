@@ -1,6 +1,7 @@
 from PyQt5 import QtWidgets, uic
 from home_page.navigate_pages import ButtonActions
 from home_page.add_pages import AddPage
+from home_page.launch_page import Launch
 
 class MyWindow(QtWidgets.QMainWindow):
     def __init__(self):
@@ -14,6 +15,10 @@ class MyWindow(QtWidgets.QMainWindow):
 
         button_handler = ButtonActions(self)
         button_handler.connect_buttons()
+        
+        launch_page = Launch(self)
+        launch_page.showDialog()
+
 
 
 

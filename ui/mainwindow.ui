@@ -33,25 +33,12 @@
        <string/>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="2" column="0" colspan="2">
-        <widget class="QPushButton" name="pid_control">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="home">
          <property name="text">
-          <string>PID Control</string>
+          <string>Home</string>
          </property>
         </widget>
-       </item>
-       <item row="5" column="0" colspan="2">
-        <spacer name="verticalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>45</height>
-          </size>
-         </property>
-        </spacer>
        </item>
        <item row="1" column="0">
         <spacer name="verticalSpacer_4">
@@ -66,6 +53,13 @@
          </property>
         </spacer>
        </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="pid_control">
+         <property name="text">
+          <string>PID Control</string>
+         </property>
+        </widget>
+       </item>
        <item row="3" column="0">
         <spacer name="verticalSpacer_3">
          <property name="orientation">
@@ -79,14 +73,54 @@
          </property>
         </spacer>
        </item>
-       <item row="6" column="0" colspan="2">
+       <item row="4" column="0">
+        <widget class="QPushButton" name="vision">
+         <property name="text">
+          <string>Vision</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>45</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="6" column="0">
         <widget class="QPushButton" name="mission_planning">
          <property name="text">
           <string>Mission Planning</string>
          </property>
         </widget>
        </item>
-       <item row="7" column="1">
+       <item row="7" column="0">
+        <spacer name="verticalSpacer_10">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>11</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="8" column="0">
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="text">
+          <string>PushButton</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -98,20 +132,6 @@
           </size>
          </property>
         </spacer>
-       </item>
-       <item row="4" column="0" colspan="2">
-        <widget class="QPushButton" name="vision">
-         <property name="text">
-          <string>Vision</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" colspan="2">
-        <widget class="QPushButton" name="home">
-         <property name="text">
-          <string>Home</string>
-         </property>
-        </widget>
        </item>
       </layout>
      </widget>
@@ -125,7 +145,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page">
        <layout class="QGridLayout" name="gridLayout_3">
@@ -437,7 +457,7 @@
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_4">
             <item>
-             <widget class="QPushButton" name="pushButton_4">
+             <widget class="QPushButton" name="select_launch_file">
               <property name="text">
                <string>Select launch file</string>
               </property>
@@ -453,7 +473,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="lineEdit"/>
+               <widget class="QLineEdit" name="file_selected"/>
               </item>
              </layout>
             </item>
