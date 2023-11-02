@@ -1,6 +1,7 @@
+#!/usr/bin/python3
 from PyQt5 import QtWidgets
 import sys
-from mainwindow import MyWindow
+from home_page.mainwindow import MyWindow
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
