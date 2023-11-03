@@ -1,10 +1,10 @@
 
-import os
-from PyQt5.QtCore import QLibraryInfo
+# import os
+# from PyQt5.QtCore import QLibraryInfo
 
-os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = QLibraryInfo.location(
-    QLibraryInfo.PluginsPath
-)
+# os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = QLibraryInfo.location(
+#     QLibraryInfo.PluginsPath
+# )
 from PyQt5.QtGui import QPixmap
 from PyQt5 import QtWidgets, uic
 from vision_page.video_capture_thread import VideoThread
@@ -17,15 +17,15 @@ class Vision(QtWidgets.QDialog):
         self.video_thread.start()
         self.video_thread.ImageUpdate.connect(self.ImageUpdateSlot)
         
-        uic.loadUi('ui/vision.ui', self)  # Load the .ui file for the new window
+        uic.loadUi('../ui/vision.ui', self)  # Load the .ui file for the new window
         
-        # self.stop_button.clicked.connect(self.CancelFeed) # Probably not needed
+        # self.stop_button.clicked.connect(self.CancelFeed) 
 
     def ImageUpdateSlot(self, Image):
         self.camera_feed.setPixmap(QPixmap.fromImage(Image))
         self.camera_feed.setScaledContents(True)
 
-    # def CancelFeed(self): # Probably not needed
+    # def CancelFeed(self): 
     #     self.video_thread.stop()
 
     

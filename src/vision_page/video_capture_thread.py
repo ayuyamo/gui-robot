@@ -6,7 +6,7 @@ class VideoThread(QThread):
     ImageUpdate = pyqtSignal(QImage)
     def run(self):
         self.ThreadActive = True
-        Capture = cv2.VideoCapture("banana.mp4")
+        Capture = cv2.VideoCapture("../banana.mp4")
         while self.ThreadActive:
             ret, frame = Capture.read()
             if ret:
