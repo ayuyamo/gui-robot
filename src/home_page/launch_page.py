@@ -4,20 +4,12 @@ from PyQt5.QtCore import QObject
 class Launch(QObject):
     def __init__(self, main):
         self.main = main
-        page2 = self.main.stacked_widget.widget(1)
-        
-        text_edit = page2.findChild(QTextEdit, 'nodes_selected')
-        main_node = page2.findChild(QCheckBox, 'main_node')
-        pid_node = page2.findChild(QCheckBox, 'pid_node')
-        desired_state_node = page2.findChild(QCheckBox, 'desired_state_node')
-        current_state_node = page2.findChild(QCheckBox, 'current_state_node')
-        absolute_state_node = page2.findChild(QCheckBox, 'absolute_state_node')
 
-        self.connect_checkbox(main_node, text_edit)
-        self.connect_checkbox(pid_node, text_edit)
-        self.connect_checkbox(desired_state_node, text_edit)
-        self.connect_checkbox(current_state_node, text_edit)
-        self.connect_checkbox(absolute_state_node, text_edit)
+        self.connect_checkbox(self.main.main_node, self.main.nodes_selected)
+        self.connect_checkbox(self.main.pid_node, self.main.nodes_selected)
+        self.connect_checkbox(self.main.desired_state_node, self.main.nodes_selected)
+        self.connect_checkbox(self.main.current_state_node, self.main.nodes_selected)
+        self.connect_checkbox(self.main.absolute_state_node, self.main.nodes_selected)
         
     def connect_checkbox(self, checkbox, text_edit):
         checkbox.toggled.connect(lambda state, te=text_edit, cb=checkbox: self.on_checkbox_toggled(state, te, cb))

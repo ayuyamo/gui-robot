@@ -1,10 +1,10 @@
 
-import os
-from PyQt5.QtCore import QLibraryInfo
+# import os
+# from PyQt5.QtCore import QLibraryInfo
 
-os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = QLibraryInfo.location(
-    QLibraryInfo.PluginsPath
-)
+# os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = QLibraryInfo.location(
+#     QLibraryInfo.PluginsPath
+# )
 from PyQt5.QtGui import QPixmap
 from PyQt5 import QtWidgets, uic
 from vision_page.video_capture_thread import VideoThread
@@ -30,6 +30,7 @@ class Vision(QtWidgets.QDialog):
     def ImageUpdateSlot(self, Image):
         self.camera_feed.setPixmap(QPixmap.fromImage(Image))
         self.camera_feed.setScaledContents(True)
+
 
     def toggleFeed(self): # Probably not needed
         # self.video_thread.stop()
