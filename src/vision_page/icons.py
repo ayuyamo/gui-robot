@@ -7,7 +7,9 @@ class Icons(QObject):
         self.main = main
     
     def setIcons(self):
-        # self.main.media_toggle_button.setIcon(self.main.style().standardIcon(QtWidgets.QStyle.SP_MediaPause))
-        self.main.media_toggle_button.setIcon(self.main.style().standardIcon(QtWidgets.QStyle.SP_MediaPlay))
+        if self.main.paused == False: 
+            self.main.media_toggle_button.setIcon(self.main.style().standardIcon(QtWidgets.QStyle.SP_MediaPause))
+        else:
+            self.main.media_toggle_button.setIcon(self.main.style().standardIcon(QtWidgets.QStyle.SP_MediaPlay))
         
         self.main.media_toggle_button.setAutoRaise(True)  # Remove the border and background

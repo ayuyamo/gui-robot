@@ -20,25 +20,27 @@ class Vision(QtWidgets.QDialog):
         
         uic.loadUi('ui/vision.ui', self)  # Load the .ui file for the new window
         
-        icon = Icons(self)
-        icon.setIcons()
+        self.paused = False
         
-        self.pause = False
+        self.media_toggle_button.clicked.connect(self.toggleFeed) # Probably not needed
         
-        # self.media_toggle_button.clicked.connect(self.toggleFeed) # Probably not needed
+        self.icon = Icons(self)
+        self.icon.setIcons()
 
     def ImageUpdateSlot(self, Image):
         self.camera_feed.setPixmap(QPixmap.fromImage(Image))
         self.camera_feed.setScaledContents(True)
 
     def toggleFeed(self): # Probably not needed
-        self.video_thread.stop()
-        # if self.paused:
-        #     self.paused = False
-        #     self.video_thread.resume()  # Resume the video feed
-        # else:
-        #     self.paused = True
-        #     self.video_thread.pause()  # Pause the video feed
+        # self.video_thread.stop()
+        if self.paused:
+            self.paused = False
+            self.video_thread.resume()  # Resume the video feed
+        else:
+            self.paused = True
+            self.video_thread.pause()  # Pause the video feed
+        self.icon.setIcons()
+
 
     
     
