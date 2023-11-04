@@ -2,7 +2,7 @@ from PyQt5 import QtWidgets, uic
 from home_page.navigate_pages import ButtonActions
 from home_page.add_pages import AddPage
 from home_page.launch_page import Launch
-from icons import Icons
+from home_page.icons import Icons
 
 class MyWindow(QtWidgets.QMainWindow):
     def __init__(self):

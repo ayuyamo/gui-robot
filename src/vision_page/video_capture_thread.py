@@ -1,4 +1,4 @@
-from PyQt5.QtCore import QThread, pyqtSignal, Qt
+from PyQt5.QtCore import QThread, pyqtSignal, QMutex, QWaitCondition
 from PyQt5.QtGui import QImage
 import cv2
 

@@ -150,15 +150,9 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="home_2">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
+           <widget class="QToolButton" name="home_2">
             <property name="text">
-             <string>Page 2</string>
+             <string>...</string>
             </property>
             <property name="iconSize">
              <size>
@@ -420,15 +414,9 @@
            </spacer>
           </item>
           <item>
-           <widget class="QPushButton" name="home_1">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
+           <widget class="QToolButton" name="home_1">
             <property name="text">
-             <string>Page 1</string>
+             <string>...</string>
             </property>
             <property name="iconSize">
              <size>
