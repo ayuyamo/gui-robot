@@ -21,8 +21,8 @@ class Vision(QtWidgets.QDialog):
         
         self.paused = False
         
-        # self.media_toggle_button.clicked.connect(self.toggleFeed) # Probably not needed
         self.media_toggle_button.clicked.connect(self.toggleFeed) 
+        self.stop_video.clicked.connect(self.cancel_feed) 
         self.icon = Icons(self)
         self.icon.setIcons()
     
@@ -41,16 +41,16 @@ class Vision(QtWidgets.QDialog):
             self.camera_feed.setPixmap(pixmap.scaled(self.camera_feed.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation))
 
 
-    def toggleFeed(self): # Probably not needed
-        # # self.video_thread.stop()
-        # if self.paused:
-        #     self.paused = False
-        #     self.video_thread.resume()  # Resume the video feed
-        # else:
-        #     self.paused = True
-        #     self.video_thread.pause()  # Pause the video feed
-        # self.icon.setIcons()
+    def toggleFeed(self): 
+        if self.paused:
+            self.paused = False
+            self.video_thread.resume()  # Resume the video feed
+        else:
+            self.paused = True
+            self.video_thread.pause()  # Pause the video feed
+        self.icon.setIcons()
         
+    def cancel_feed(self):
         self.video_thread.stop()
         self.video_status.setText("Video Stopped")
 

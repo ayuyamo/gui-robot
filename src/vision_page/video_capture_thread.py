@@ -13,14 +13,14 @@ class VideoThread(QThread):
     
     def __init__(self):
         super().__init__()
-        # self.check_play_option()
+        self.check_play_option()
         self.ThreadActive = False
 
     
-    # def check_play_option(self):
-    #     self.mutex = QMutex()
-    #     self.wait_cond = QWaitCondition()
-    #     self.isPaused = False
+    def check_play_option(self):
+        self.mutex = QMutex()
+        self.wait_cond = QWaitCondition()
+        self.isPaused = False
     
     def set_socket(self):
         try:
@@ -61,6 +61,11 @@ class VideoThread(QThread):
         self.ThreadActive = True
         self.text_signal.emit("Video Running")
         while self.ThreadActive and self.client_socket is not None:
+            self.mutex.lock()
+            while self.isPaused:
+                self.wait_cond.wait(self.mutex)
+            self.mutex.unlock()
+            
             while len(self.data) < self.payload_size:
                 self.data += self.client_socket.recv(4096)
             packed_msg_size = self.data[:self.payload_size]
@@ -81,16 +86,16 @@ class VideoThread(QThread):
 
     def stop(self):
         self.ThreadActive = False
-        # self.wait_cond.wakeAll()
+        self.wait_cond.wakeAll()
         self.quit()
 
-    # def pause(self):
-    #     self.mutex.lock()
-    #     self.isPaused = True
-    #     self.mutex.unlock()
+    def pause(self):
+        self.mutex.lock()
+        self.isPaused = True
+        self.mutex.unlock()
 
-    # def resume(self):
-    #     self.mutex.lock()
-    #     self.isPaused = False
-    #     self.wait_cond.wakeAll()
-    #     self.mutex.unlock()
+    def resume(self):
+        self.mutex.lock()
+        self.isPaused = False
+        self.wait_cond.wakeAll()
+        self.mutex.unlock()
