@@ -166,8 +166,8 @@
         </property>
         <property name="iconSize">
          <size>
-          <width>35</width>
-          <height>35</height>
+          <width>50</width>
+          <height>50</height>
          </size>
         </property>
        </widget>
@@ -204,6 +204,12 @@
         </property>
         <property name="text">
          <string>...</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>50</width>
+          <height>50</height>
+         </size>
         </property>
        </widget>
       </item>
