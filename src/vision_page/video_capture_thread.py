@@ -33,17 +33,6 @@ class VideoThread(QThread):
             self.text_signal.emit("Socket Setup Error")
             return None, None, None, None
         
-    # def run(self):
-    #     self.ThreadActive = True
-    #     Capture = cv2.VideoCapture("banana.mp4")
-    #     while self.ThreadActive:
-    #         ret, frame = Capture.read()
-    #         if ret:
-    #             rgbImage = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    #             height, width, channel = rgbImage.shape
-    #             bytesPerLine = channel * width
-    #             qImg = QImage(rgbImage.data, width, height, bytesPerLine, QImage.Format.Format_RGB888)
-    #             self.image_signal.emit(qImg)
     def run(self):
         self.server_socket, self.client_socket, self.data, self.payload_size = self.set_socket()
         self.ThreadActive = True
