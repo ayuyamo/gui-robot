@@ -9,29 +9,22 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap
 from PyQt5 import QtWidgets, uic
 from vision_page.video_capture_thread import VideoThread
-from vision_page.icons import Icons
 
 class Vision(QtWidgets.QDialog):
     def __init__(self):
         super().__init__()
         
         self.start_video()
-
+        
         uic.loadUi('../ui/vision.ui', self)  # Load the .ui file for the new window
         
-        self.paused = False
-        
-        # self.media_toggle_button.clicked.connect(self.toggleFeed) # Probably not needed
-        self.media_toggle_button.clicked.connect(self.toggleFeed) 
-        self.icon = Icons(self)
-        self.icon.setIcons()
-    
+        self.stop_video.clicked.connect(self.CancelFeed)
     def start_video(self):
         self.video_thread = VideoThread()
         self.video_thread.image_signal.connect(self.update_image)
         self.video_thread.text_signal.connect(self.set_video_text)
         self.video_thread.start()
-        
+
     def set_video_text(self, text):
         self.video_status.setText(text)
         
@@ -40,24 +33,6 @@ class Vision(QtWidgets.QDialog):
             pixmap = QPixmap.fromImage(image)
             self.camera_feed.setPixmap(pixmap.scaled(self.camera_feed.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation))
 
-
-    def toggleFeed(self): # Probably not needed
-        # # self.video_thread.stop()
-        # if self.paused:
-        #     self.paused = False
-        #     self.video_thread.resume()  # Resume the video feed
-        # else:
-        #     self.paused = True
-        #     self.video_thread.pause()  # Pause the video feed
-        # self.icon.setIcons()
-        
+    def CancelFeed(self): 
         self.video_thread.stop()
         self.video_status.setText("Video Stopped")
-
-
-    
-    
-
-
-    
-

@@ -9,7 +9,7 @@ class MyWindow(QtWidgets.QMainWindow):
         super().__init__()
         
         # Load the .ui file
-        uic.loadUi('ui/mainwindow.ui', self)
+        uic.loadUi('../ui/mainwindow.ui', self)
 
         add_page = AddPage(self)
         add_page.add_widgets()
