@@ -5,10 +5,11 @@ class ButtonActions(QObject):
         super().__init__()
         self.main = main
 
-    def connect_buttons(self):
+    def connect_buttons(self): # Connect buttons to set the current index of the stacked widget
         self.main.home.clicked.connect(lambda: self.main.stacked_widget.setCurrentIndex(0))
         self.main.home_1.clicked.connect(lambda: self.main.stacked_widget.setCurrentIndex(0))
         self.main.home_2.clicked.connect(lambda: self.main.stacked_widget.setCurrentIndex(1))
+        
         self.main.pid_control.clicked.connect(lambda: self.main.stacked_widget.setCurrentWidget(self.main.pid_page))
         self.main.vision.clicked.connect(lambda: self.main.stacked_widget.setCurrentWidget(self.main.vision_page))
         self.main.mission_planning.clicked.connect(lambda: self.main.stacked_widget.setCurrentWidget(self.main.mission_page))

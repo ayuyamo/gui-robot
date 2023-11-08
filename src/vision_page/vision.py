@@ -18,7 +18,7 @@ class Vision(QtWidgets.QDialog):
 
         uic.loadUi('../ui/vision.ui', self)  # Load the .ui file for the new window
         
-        self.paused = False
+        self.paused = False # Initialize the paused flag as False
         
         self.media_toggle_button.clicked.connect(self.toggleFeed) 
         self.stop_video.clicked.connect(self.cancel_feed) 
@@ -50,7 +50,7 @@ class Vision(QtWidgets.QDialog):
         self.icon.setIcons()
         
     def cancel_feed(self):
-        self.video_thread.stop()
+        self.video_thread.stop() # Stop the video feed
         self.video_status.setText("Video Stopped")
 
 

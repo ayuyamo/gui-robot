@@ -8,11 +8,12 @@ class AddPage(QObject):
         super().__init__()
         self.main = main
     
-    def add_widgets(self):
+    def add_widgets(self): # Method to add widgets to the main window
         self.main.pid_page = PIDController()
         self.main.vision_page = Vision()
         self.main.mission_page = MissionPlanning()
         
+        # Add the pages to the stacked widget
         self.main.stacked_widget.addWidget(self.main.pid_page)
         self.main.stacked_widget.addWidget(self.main.vision_page)
         self.main.stacked_widget.addWidget(self.main.mission_page)
